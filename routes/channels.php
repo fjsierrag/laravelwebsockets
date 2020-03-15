@@ -14,3 +14,7 @@
 Broadcast::channel('chat', function ($user) {
 	return $user;
 });
+
+Broadcast::channel('alertas-mp', function ($user) {
+    return true;
+});

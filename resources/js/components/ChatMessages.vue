@@ -7,9 +7,9 @@
                         {{ message.user.name }}
                     </strong>
                 </div>
-                <p>
+                <div>
                     {{ message.message }}
-                </p>
+                </div>
             </div>
         </li>
     </ul>

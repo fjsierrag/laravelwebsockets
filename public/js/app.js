@@ -14096,14 +14096,14 @@ var app = new Vue({
                     _this.$set(_this.users, index, user);
                 }
             });
-        }).listen('MessageSent', function (e) {
+        }).listen('MessageSent', function (event) {
             _this.messages.push({
-                message: e.message.message,
-                user: e.user
+                message: event.message.message,
+                user: event.user
             });
 
             _this.users.forEach(function (user, index) {
-                if (user.id === e.user.id) {
+                if (user.id === event.user.id) {
                     user.typing = false;
                     _this.$set(_this.users, index, user);
                 }
@@ -14147,10 +14147,10 @@ window._ = __webpack_require__(15);
  */
 
 try {
-  window.Popper = __webpack_require__(3).default;
-  window.$ = window.jQuery = __webpack_require__(4);
+    window.Popper = __webpack_require__(3).default;
+    window.$ = window.jQuery = __webpack_require__(4);
 
-  __webpack_require__(17);
+    __webpack_require__(17);
 } catch (e) {}
 
 /**
@@ -14172,9 +14172,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 var token = document.head.querySelector('meta[name="csrf-token"]');
 
 if (token) {
-  window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+    window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
 } else {
-  console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+    console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
 
 /**
@@ -14188,11 +14188,11 @@ if (token) {
 window.Pusher = __webpack_require__(38);
 
 window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo__["a" /* default */]({
-  broadcaster: 'pusher',
-  key: "websocketkey",
-  wsHost: window.location.hostname,
-  wsPort: 6001,
-  disableStats: true
+    broadcaster: 'pusher',
+    key: "websocketkey",
+    wsHost: window.location.hostname,
+    wsPort: 6001,
+    disableStats: true
 });
 
 /***/ }),
@@ -57762,7 +57762,7 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
-          _c("p", [
+          _c("div", [
             _vm._v(
               "\n                " + _vm._s(message.message) + "\n            "
             )

@@ -10479,6 +10479,7 @@ a.text-dark:focus {
 }
 
 .chat li {
+  font-size: 12px;
   margin-bottom: 10px;
   padding-bottom: 5px;
   border-bottom: 1px dotted #B3A9A9;
