@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Console\Commands\NotificarMaxpointCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -24,8 +25,11 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+        $schedule->command(NotificarMaxpointCommand::class)
+            ->when(function(){
+                $fechaActual=now();
+                return ($fechaActual->hour%2 === 0 && $fechaActual->minute=='00');
+            });
     }
 
     /**

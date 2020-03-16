@@ -38,7 +38,10 @@ class NotificarMaxpointCommand extends Command
      */
     public function handle()
     {
-        $datos = ["mensaje" => "Solo es un mensaje"];
+        $datos = [
+            "mensaje" => "Notificacion",
+            "imagen" => asset("img/manos.jfif")
+        ];
         broadcast(new NotificarMaxpoint($datos));
     }
 }
