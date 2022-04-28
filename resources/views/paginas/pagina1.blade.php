@@ -8,10 +8,11 @@
         $(document).ready(function () {
             window.Echo = new Echo({
                 broadcaster: 'pusher',
-                key: 'websocketkey',
+                key: 'laravelwebsocketsdemo',
                 wsHost: window.location.hostname,
                 wsPort: 6001,
                 disableStats: true,
+                enabledTransports: ['ws', 'wss']
             });
 
             Echo.channel('alertas-mp')
